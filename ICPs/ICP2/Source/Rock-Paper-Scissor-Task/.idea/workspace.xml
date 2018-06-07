@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8894dca1-8984-45d8-8023-975905d2e0df" name="Default" comment="" />
+    <list default="true" id="cb1ba89a-7c7c-4081-a48f-764582918249" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,13 +14,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Source/index.html">
+      <file leaf-file-name="RockPaperScissors.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RockPaperScissors.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -28,10 +29,17 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Source/index.html" />
+        <option value="$PROJECT_DIR$/RockPaperScissors.html" />
       </list>
     </option>
   </component>
@@ -66,18 +74,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="ICP1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ICP1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ICP1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ICP1" type="462c0819:PsiDirectoryNode" />
-              <item name="Documentation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ICP1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ICP1" type="462c0819:PsiDirectoryNode" />
-              <item name="Source" type="462c0819:PsiDirectoryNode" />
+              <item name="ICP2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ICP2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -90,8 +88,9 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/Kranthi/Kranthi/Ms-2nd Semester/Web/ICPs/ICP1/Web_Lesson1_SourceCode/Web_Lesson1_SourceCode" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Web_Lesson2_SourceCode/Web_Lesson2_SourceCode/InClassProgramming" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -113,24 +112,24 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8894dca1-8984-45d8-8023-975905d2e0df" name="Default" comment="" />
-      <created>1528229208590</created>
+      <changelist id="cb1ba89a-7c7c-4081-a48f-764582918249" name="Default" comment="" />
+      <created>1528350390130</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1528229208590</updated>
-      <workItem from="1528229209901" duration="5398000" />
-      <workItem from="1528350285138" duration="104000" />
+      <updated>1528350390130</updated>
+      <workItem from="1528350391436" duration="1130000" />
+      <workItem from="1528394668256" duration="3785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5502000" />
+    <option name="totallyTimeSpent" value="4915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24670571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -160,22 +159,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Source/index.html">
+    <entry file="file://$PROJECT_DIR$/RockPaperScissors.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/index.html">
+    <entry file="file://$PROJECT_DIR$/RockPaperScissors.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
