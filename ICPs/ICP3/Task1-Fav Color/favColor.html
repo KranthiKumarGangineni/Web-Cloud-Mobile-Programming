@@ -1,0 +1,44 @@
+<html>
+  <head>
+   <title>PickMyFavoriteColor</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+
+    <div id="container">
+     <h1>Color picker</h1>
+     <input id="color" type="text"/>
+     <button id="add-to-favorite">Add to favorites</button>
+     <div class="row">
+       <div class="column">
+         <div class="preview">
+         </div>
+       </div>
+       <div class="column">
+           <label><strong>Sample Colors:</strong></label>
+           <br/><br/>
+         <div id="colors">
+
+         </div>
+
+           <!-- Favorites Section -->
+           <br/>
+           <label id="favoritesText" style="display: none"><strong>Favorites:</strong></label>
+           <br/><br/>
+           <div id="favorites">
+           </div>
+
+       </div>
+
+         <br/>
+
+       <br/>
+      <div class="color-code"></div>
+     </div>
+   </div>
+
+ </body>
+</html>
