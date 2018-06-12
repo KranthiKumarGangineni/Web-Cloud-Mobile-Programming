@@ -1,7 +1,7 @@
 function getGithubInfo(user) {
     //1. Create an instance of XMLHttpRequest class and send a GET request using it. The function should finally return the object(it now contains the response!)
     var xhttp = new XMLHttpRequest();
-    var url = "https://api.github.com/users/"+user;
+    var url = "https://www.instagram.com/web/search/topsearch/?context=user&count=1&query="+user;
     xhttp.overrideMimeType("application/json");
     xhttp.open('GET', url, true);
     xhttp.onload = function () {
@@ -17,15 +17,8 @@ function getGithubInfo(user) {
 }
 
 function showUser(user) {
-    //2. set the contents of the h2 and the two div elements in the div '#profile' with the user content
-    $("#h2id").text(user.login);
-    $(".avatar").html("<img height='200' width='200' src='"+ user.avatar_url+"'/>");
-    var link = "<a target='_blank' href='"+user.html_url+"'> URL </a>";
-    $(".information").html("<label><u><strong>User Information</strong></u></label>" +
-        "<br/><br/><label style='color: #4c4066'>Login Name : </label>"+ user.name
-        +"<br/><label style='color: #4c4066'> Login ID : </label>"+ user.id
-        +"<br/> <label style='color: #4c4066'>GitHub URL : </label>"+link
-        +"<br/> <label style='color: #4c4066'>GitHub Public Repos Count : </label>"+ user.public_repos);
+    $("#h2id").text(user.users[0].user.username);
+    $(".avatar").html("<img height='200' width='200' src='"+ user.users[0].user.profile_pic_url+"'/>");
     $("#profile").show();
 }
 
@@ -33,7 +26,6 @@ function noSuchUser(username) {
     //3. set the elements such that a suitable message is displayed
     $("#h2id").text("Sorry, No Such User '"+username +"' Exists");
     $(".avatar").text('');
-    $(".information").html('');
     $("#profile").show();
 }
 
