@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="courseRegApp" ng-controller="courseRegCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Enroll</title>
+
+    <!-- Below condition is added to maintain width and initial scale is for setting Zoom version -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Css Import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Jquery Import for any of the function calls -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap JS Import -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Importing Angular Js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+
+    <script src="coursescript.js"></script>
+</head>
+<body>
+
+<!-- Adding Navigation Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand" id="homePage"></div>
+        </div>
+        <ul class="nav navbar-nav">
+            <!-- To make tabs toggleable, added the data-toggle attribute -->
+            <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ng-click="signOut()"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- Header tags with Inline Styling -->
+    <div align="center" style="background-color: lightgreen;border: black 1px solid">
+        <h1>University of Missouri- Kansas City</h1>
+        <h2>Enroll for a Course</h2>
+    </div>
+    <br/>
+
+<div id="enrollCourse1">
+
+    <h4 style="color: chocolate"><u>Design and Analysis of Algorithms</u></h4>
+
+    <!-- Responsive Table using Bootstrap -->
+    <div id="course1Timings" class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Day & timings</th>
+                <th>Room</th>
+                <th>Instructor</th>
+                <th>Meeting Dates</th>
+                <th>Credit hours</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Mon Wed 2:30PM - 5:00PM</td>
+                <td>Flarsheim Hall-Rm 101</td>
+                <td>Appie</td>
+                <td>08/13/2018 - 11/11/2018</td>
+                <td>3</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Available, Total Seats iteration from the List in Script -->
+    <div ng-repeat="x in availableSeats" align="center">
+        <strong ng-bind="x.text"></strong> :
+        <span ng-bind="x.seats"></span>
+    </div>
+    <br/>
+
+    <!-- Enroll, Drop Button -->
+    <button id="course1Enroll" type="button" class="btn btn-primary center-block" ng-click="enrollOrDrop($event)">Enroll</button>
+    <br/>
+    <!-- Success Message -->
+    <p align="center" style="color: red"><strong id="successEnrolling"></strong></p>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="courseRegApp" ng-controller="courseRegCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Courses Page</title>
+
+    <!-- Below condition is added to maintain width and initial scale is for setting Zoom version -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Css Import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Jquery Import for any of the function calls -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap JS Import -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Importing Angular Js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+
+    <script src="coursescript.js"></script>
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+
+<body background="images/umkc.PNG">
+
+<!-- Adding Navigation Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand" id="homePage"></div>
+        </div>
+        <ul class="nav navbar-nav">
+            <!-- To make tabs toggleable, added the data-toggle attribute -->
+            <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ng-click="signOut()"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- Header tags with Inline Styling -->
+    <div align="center" style="background-color: lightgreen;border: black 1px solid">
+        <h1>University of Missouri- Kansas City</h1>
+        <h2>Available Courses Info</h2>
+    </div>
+    <br/>
+    <!-- Available Courses -->
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#course1">Course 1 - COMP-SCI 5592 Design and Analysis of Algorithms</a>
+                </h4>
+            </div>
+            <div id="course1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="media-body">
+                        <h4 style="color: chocolate"><u>Course 1 Description</u></h4>
+                        <p class="well">Combinatorial analysis, searching and sorting, shortest path algorithms, spanning trees, search and traversal techniques, backtracking, branch and bound, heuristics, algebraic simplification and transformation.
+                        </p>
+                        <hr>
+
+                        <h4 style="color: orange"><u>Click on below URL or Image to Enroll for Course</u></h4>
+                        <!-- Image, URL of the Course -->
+                        <a href="javascript:void(0)" ng-click="enrollForCourse('course1')">Design and Analysis of Algorithms</a>
+                        <br/><br/>
+                        <img src="images/daa.png" ng-click="enrollForCourse('course1')" width="400" height="400">
+                        <hr>
+
+                        <!-- Instructors Info SetUp -->
+                        <div id="contact" class="tab-pane">
+                            <h4 style="color: chocolate"><u>Instructors Information</u></h4>
+                            <!-- Adding Media Class -->
+                            <div class="media">
+                                <!-- Setting Image at the top and left side -->
+                                <div class="media-left media-top">
+                                    <!-- Adding Image Source -->
+                                    <figure>
+                                        <img src="images/img_avatar1.png" alt="jake" width="80px">
+                                    </figure>
+                                </div>
+                                <!-- Setting up media Body (Data) -->
+                                <div class="media-body">
+                                    <!-- Media Heading setup -->
+                                    <h4 class="media-heading">Jake Ross</h4>
+                                    <!-- Creating MailTo Link -->
+                                    <p>Email Id : <a href="mailto:jake@mail.umkc.edu" target="_top">jake@mail.umkc.edu</a></p>
+                                    <p>Role : TA</p>
+                                    <p>Instructors Ratings : <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span></p>
+                                    <p title="Good Instructor." class="review"><u>Top Review for Instructor</u></p>
+                                </div>
+                            </div>
+
+                            <!-- Adding One more Media Class -->
+                            <div class="media">
+                                <!-- Setting Image at the top and left side -->
+                                <div class="media-left media-top">
+                                    <!-- Adding Image Source -->
+                                    <figure>
+                                        <img src="images/img_avatar1.png" alt="appie" width="80px">
+                                    </figure>
+                                </div>
+                                <!-- Setting up media Body (Data) -->
+                                <div class="media-body">
+                                    <!-- Media Heading setup -->
+                                    <h4 class="media-heading">Appie</h4>
+                                    <!-- Creating MailTo Link -->
+                                    <p>Email Id : <a href="mailto:appie@mail.umkc.edu" target="_top">appie@mail.umkc.edu</a></p>
+                                    <p>Role : Professor</p>
+                                    <p>Instructors Ratings : <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span></p>
+                                    <p title="Good Teaching Skills, very good explanation" class="review"><u>Top Review for Instructor</u></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <!-- Course 1 Other Details -->
+                        <h4 style="color: chocolate"><u>Course 1 Details</u></h4>
+                        <!-- Responsive Table using Bootstrap -->
+                        <div id="classTimings" class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Day & timings</th>
+                                    <th>Room</th>
+                                    <th>Instructor</th>
+                                    <th>Meeting Dates</th>
+                                    <th>Credit hours</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Mon Wed 2:30PM - 5:00PM</td>
+                                    <td>Flarsheim Hall-Rm 101</td>
+                                    <td>Appie</td>
+                                    <td>08/13/2018 - 11/11/2018</td>
+                                    <td>3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr>
+                        <h4 style="color: chocolate"><u>Course 1 Pre-Requisites</u></h4>
+
+
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#c1p1">Data Structures</button>
+                        <!-- Modal Box to show some Description of the Pre-Req -->
+                        <div class="modal fade" id="c1p1" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">COMP-SCI 303 Data Structures  Credits: 3</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Linear and hierarchical data structures, including stacks, queues, lists, trees, priority queues, advanced tree structures, hashing tables, dictionaries and disjoint-set. Abstractions and strategies for efficient implementations will be discussed. Linear and hierarchical algorithms will be studied as well as recursion and various searching and sorting algorithms. Programming concepts include Object Orientation, concurrency and parallel programming. Several in-depth projects in C++ will be required.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#c1p2">Introduction to Algorithms and Complexity</button>
+                        <!-- Modal Box to show some Description of the Pre-Req -->
+                        <div class="modal fade" id="c1p2" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">COMP-SCI 404 Introduction to Algorithms and Complexity Credits: 3</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>A rigorous review of asymptotic analysis techniques and algorithms: from design strategy (such as greedy, divide-and-conquer, and dynamic programming) to problem areas (such as searching, sorting, shortest path, spanning trees, transitive closures, and other graph algorithms, string algorithms) arriving at classical algorithms with supporting data structures for efficient implementation. Throughout, the asymptotic complexity is studied in worst case, best case, and average case for time and/or space, using appropriate analysis techniques (recurrence relations, amortization). Introduction to the basic concepts of computability and NP-complete theory.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- Similar Courses -->
+                        <h4 style="color: chocolate"><u>Similar Courses Online</u></h4>
+                        <a target="_blank" href="https://www.mooc-list.com/tags/data-structures">Data Structures- MOOC</a><br/>
+                        <a target="_blank" href="https://www.udemy.com/learning-data-structures-and-algorithms/">Data Structures- Udemy</a>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#course2">Course 2 - COMP-SCI 5551 Advanced Software Engineering</a>
+                </h4>
+            </div>
+            <div id="course2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="media-body">
+                        <h4 style="color: chocolate"><u>Course 2 Description</u></h4>
+                        <p class="well">Current concepts in software architecture and design, comparative analysis for design, object-oriented software design, software quality criteria for evaluation of software design. Introduction to metrics, project management and managerial ethics.
+                        </p>
+                        <hr>
+
+                        <h4 style="color: orange"><u>Click on below URL or Image to Enroll for Course</u></h4>
+                        <!-- Image, URL of the Course -->
+                        <a href="javascript:void(0)" ng-click="enrollForCourse('course2')">Advanced Software Engineering</a>
+                        <br/><br/>
+                        <img src="images/ase.jpg" ng-click="enrollForCourse('course2')" width="400" height="400">
+                        <hr>
+
+                        <!-- Instructors Info SetUp -->
+                        <div id="course2Contact" class="tab-pane">
+                            <h4 style="color: chocolate"><u>Course 2 Instructors Information</u></h4>
+                            <!-- Adding Media Class -->
+                            <div class="media">
+                                <!-- Setting Image at the top and left side -->
+                                <div class="media-left media-top">
+                                    <!-- Adding Image Source -->
+                                    <figure>
+                                        <img src="images/img_avatar1.png" alt="Rohit Kumar" width="80px">
+                                    </figure>
+                                </div>
+                                <!-- Setting up media Body (Data) -->
+                                <div class="media-body">
+                                    <!-- Media Heading setup -->
+                                    <h4 class="media-heading">Rohit Kumar</h4>
+                                    <!-- Creating MailTo Link -->
+                                    <p>Email Id : <a href="mailto:rohit@mail.umkc.edu" target="_top">rohit@mail.umkc.edu</a></p>
+                                    <p>Role : TA</p>
+                                    <p>Instructors Ratings : <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span></p>
+                                    <p title="Good Instructor." class="review"><u>Top Review for Instructor</u></p>
+                                </div>
+                            </div>
+
+                            <!-- Adding One more Media Class -->
+                            <div class="media">
+                                <!-- Setting Image at the top and left side -->
+                                <div class="media-left media-top">
+                                    <!-- Adding Image Source -->
+                                    <figure>
+                                        <img src="images/img_avatar1.png" alt="Yug Yung Lee" width="80px">
+                                    </figure>
+                                </div>
+                                <!-- Setting up media Body (Data) -->
+                                <div class="media-body">
+                                    <!-- Media Heading setup -->
+                                    <h4 class="media-heading">Yug Yung Lee</h4>
+                                    <!-- Creating MailTo Link -->
+                                    <p>Email Id : <a href="mailto:ylee@mail.umkc.edu" target="_top">ylee@mail.umkc.edu</a></p>
+                                    <p>Role : Professor</p>
+                                    <p>Instructors Ratings : <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span></p>
+                                    <p title="Good Teaching Skills, very good explanation" class="review"><u>Top Review for Instructor</u></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <!-- Course 1 Other Details -->
+                        <h4 style="color: chocolate"><u>Course 2 Details</u></h4>
+                        <!-- Responsive Table using Bootstrap -->
+                        <div id="course2ClassTimings" class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Day & timings</th>
+                                    <th>Room</th>
+                                    <th>Instructor</th>
+                                    <th>Meeting Dates</th>
+                                    <th>Credit hours</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Tue Thu 2:30PM - 5:00PM</td>
+                                    <td>Flarsheim Hall-Rm 102</td>
+                                    <td>Yug Yung Lee</td>
+                                    <td>08/13/2018 - 11/11/2018</td>
+                                    <td>3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr>
+                        <h4 style="color: chocolate"><u>Course 2 Pre-Requisites</u></h4>
+
+
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#c2p1"> Software Engineering Capstone</button>
+                        <!-- Modal Box to show some Description of the Pre-Req -->
+                        <div class="modal fade" id="c2p1" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">COMP-SCI 451R Software Engineering Capstone Credits: 3</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>The course will focus on the requirements and project planning and managing of medium sized projects with deliverables of each phase of the software life cycle. Additional studies of software modeling, requirements specifications, configuration management, verification, validation, software evolution and quality and finally measurement, estimation and economics of the software process.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- Similar Courses -->
+                        <h4 style="color: chocolate"><u>Similar Courses Online</u></h4>
+                        <a target="_blank" href="https://www.mooc-list.com/categories/cs-software-engineering">ASE- MOOC</a><br/>
+                        <a target="_blank" href="https://www.udemy.com/nexus-scrum-advanced/">ASE- Udemy</a>
+                        <br/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#course3">Course 3 - COMP-SCI 5565 Introduction to Statistical Learning</a>
+                </h4>
+            </div>
+            <div id="course3" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="media-body">
+                        <h4 style="color: chocolate"><u>Course 3 Description</u></h4>
+                        <p class="well">Introduction to Machine Learning; Multivariate Distributions; Information Theory; Linear Algebra (Eigenanalysis); Supervised/Unsupervised Learning, Classification/Regression; Linear/Non-linear Learning; Introduction to Bayesian Learning (Bayes rule, Prior, Posterior, Maximum Likelihood); Parametric/Non-parametric Estimation.
+                        </p>
+                        <hr>
+
+                        <h4 style="color: orange"><u>Click on below URL or Image to Enroll for Course</u></h4>
+
+                        <!-- Image, URL of the Course -->
+                        <a href="javascript:void(0)" ng-click="enrollForCourse('course3')">Introduction to Statistical Learning</a>
+                        <br/><br/>
+                        <img src="images/isl.jpg" ng-click="enrollForCourse('course3')" width="400" height="400">
+                        <hr>
+
+                        <!-- Instructors Info SetUp -->
+                        <div id="course3Contact" class="tab-pane">
+                            <h4 style="color: chocolate"><u>Instructors Information</u></h4>
+                            <!-- Adding Media Class -->
+                            <div class="media">
+                                <!-- Setting Image at the top and left side -->
+                                <div class="media-left media-top">
+                                    <!-- Adding Image Source -->
+                                    <figure>
+                                        <img src="images/img_avatar1.png" alt="abby" width="80px">
+                                    </figure>
+                                </div>
+                                <!-- Setting up media Body (Data) -->
+                                <div class="media-body">
+                                    <!-- Media Heading setup -->
+                                    <h4 class="media-heading">Abby Miller</h4>
+                                    <!-- Creating MailTo Link -->
+                                    <p>Email Id : <a href="mailto:abby@mail.umkc.edu" target="_top">abby@mail.umkc.edu</a></p>
+                                    <p>Role : TA</p>
+                                    <p>Instructors Ratings : <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span></p>
+                                    <p title="Good Instructor." class="review"><u>Top Review for Instructor</u></p>
+                                </div>
+                            </div>
+
+                            <!-- Adding One more Media Class -->
+                            <div class="media">
+                                <!-- Setting Image at the top and left side -->
+                                <div class="media-left media-top">
+                                    <!-- Adding Image Source -->
+                                    <figure>
+                                        <img src="images/img_avatar1.png" alt="Chong" width="80px">
+                                    </figure>
+                                </div>
+                                <!-- Setting up media Body (Data) -->
+                                <div class="media-body">
+                                    <!-- Media Heading setup -->
+                                    <h4 class="media-heading">Chong</h4>
+                                    <!-- Creating MailTo Link -->
+                                    <p>Email Id : <a href="mailto:Chong@mail.umkc.edu" target="_top">chong@mail.umkc.edu</a></p>
+                                    <p>Role : Professor</p>
+                                    <p>Instructors Ratings : <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span></p>
+                                    <p title="Good Teaching Skills, very good explanation" class="review"><u>Top Review for Instructor</u></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <!-- Course 1 Other Details -->
+                        <h4 style="color: chocolate"><u>Course 3 Details</u></h4>
+                        <!-- Responsive Table using Bootstrap -->
+                        <div id="course3ClassTimings" class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Day & timings</th>
+                                    <th>Room</th>
+                                    <th>Instructor</th>
+                                    <th>Meeting Dates</th>
+                                    <th>Credit hours</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Mon Wed 5:30PM - 8:00PM</td>
+                                    <td>Flarsheim Hall-Rm 104</td>
+                                    <td>Chong</td>
+                                    <td>08/13/2018 - 11/11/2018</td>
+                                    <td>3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr>
+                        <h4 style="color: chocolate"><u>Course 3 Pre-Requisites</u></h4>
+
+
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#c3p1">Required* - Applied Probability</button>
+                        <!-- Modal Box to show some Description of the Pre-Req -->
+                        <div class="modal fade" id="c3p1" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">COMP-SCI 394R Applied Probability Credits: 3</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Basic concepts of probability theory. Counting and measuring. Probability, conditional probability and independence. Discrete, continuous, joint random variables. Functions of random variables. Sums of independent random variables and transform methods. Random number generation and random event generation. Law of large numbers, central limit theorem, inequalities. Their applications to computer science and electrical and computer engineering areas are stressed.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#c3p2">Recommended - Linear Algebra</button>
+                        <!-- Modal Box to show some Description of the Pre-Req -->
+                        <div class="modal fade" id="c3p2" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">MATH 300 Linear Algebra I Credits: 3</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Linear equations, matrix algebra, real vector spaces, linear transformations, determinants, eigenvalues and eigenvectors, orthogonality, and applications.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- Similar Courses -->
+                        <h4 style="color: chocolate"><u>Similar Courses Online</u></h4>
+                        <a target="_blank" href="https://www.mooc-list.com/course/statlearning-statistical-learning-stanford-online">ISL- MOOC</a><br/>
+                        <a target="_blank" href="https://www.udemy.com/machinelearning/">ISL - Udemy</a>
+                        <br/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
