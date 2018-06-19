@@ -35,6 +35,9 @@
     <p style="color: red;display: none;" align="center" id="error"><strong>Input fields should not be Empty</strong></p>
     <div id="div_VenueList">
         <h2 style="text-align: center; color: #1ab188"> Top Five Picks From FourSquare Review API </h2>
+        <span id="helpBlock" style="display: none;text-align: center;color: orange" class="help-block">
+            <strong>Note:Click on Venue Name to get some Information</strong>
+        </span>
         <ul>
             <li ng-repeat="venue in venueList"
                 style="font-size: x-large; color: #5e5e5e; text-align: center; list-style: none">
@@ -52,6 +55,7 @@
                             <div class="modal-body">
                                 <p>Id : {{venue.id}}</p>
                                 <p>Location : {{venue.location}}</p>
+                                <p>Review : {{venue.review}}</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

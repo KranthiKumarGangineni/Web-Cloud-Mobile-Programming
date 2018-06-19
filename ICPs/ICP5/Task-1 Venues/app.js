@@ -11,7 +11,7 @@ angular.module('myApp', [])
             var placeEntered = $scope.place;
             var searchQuery = $scope.searchQ;
             if (placeEntered != null && placeEntered != "" && searchQuery != null && searchQuery != "") {
-
+                $("#helpBlock").hide();
                 //This is the API that gives the list of venues based on the place and search query.
                 var handler = $http.get("https://api.foursquare.com/v2/venues/search" +
                     "?client_id=QAPR5T30AEZTJ1N0SSHFRGCBQQBKWDMPQLMDO12BMIER4XOF" +
@@ -22,6 +22,7 @@ angular.module('myApp', [])
 
                 handler.success(function (data) {
                     if (data != null && data.response != null && data.response.venues != undefined && data.response.venues != null) {
+                        $("#helpBlock").show();
                         // Tie an array named "venueList" to the scope which is an array of objects.
                         // Each object should have key value pairs where the keys are "name", "id" , "location" and values are their corresponding values from the response
                         // Marks will be distributed between logic, implementation and UI
@@ -29,9 +30,14 @@ angular.module('myApp', [])
 						    var location = value.location.formattedAddress;
 						    if(location != null){
                                 location = location.toString();
-                            }
-                            console.log(location);
-						    $scope.venueList.push({name : value.name, id : value.id, location : location})
+                            };
+						    var review = "";
+                            $http.get("https://api.foursquare.com/v2/venues/"+value.id+"/tips?" +
+                                "client_id=QAPR5T30AEZTJ1N0SSHFRGCBQQBKWDMPQLMDO12BMIER4XOF" +
+                                "&client_secret=IOFFNITPI22TPIQMYMHAVUYLM3AXSS1EK2OORET02RQ1BDOZ&v=20160215").success(function (data) {
+                                review = data.response.tips.items[0].text;
+                                $scope.venueList.push({name : value.name, id : value.id, location : location, review: review})
+                            });
                         });
                     }else{
                         $("#error").text("No Venues present for the Input values");
