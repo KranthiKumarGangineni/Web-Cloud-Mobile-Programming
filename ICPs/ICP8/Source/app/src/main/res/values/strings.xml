@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ICP8</string>
+    <string name="facebook_app_id">2152887248323140</string>
+    <string name="fb_login_protocol_scheme">fb2152887248323140</string>
+</resources>
