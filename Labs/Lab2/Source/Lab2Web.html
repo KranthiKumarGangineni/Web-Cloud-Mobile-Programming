@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Web-Lab2</title>
+
+    <!-- Below condition is added to maintain width and initial scale is for setting Zoom version -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="google-signin-client_id" content="184610063786-sfu3shikh73535os31c19jit50aaljq0.apps.googleusercontent.com">
+
+    <!-- Bootstrap Css Import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Jquery Import for any of the function calls -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap JS Import -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- On Load Function is called, because we used Sign-In and Sign-Out in Different Pages -->
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
+    <!-- ANgular JS Import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"></script>
+
+    <!-- Required Import for Data Binding -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular-sanitize.js"></script>
+
+    <script src="lab2script.js"></script>
+</head>
+
+<body ng-app="lab2App" ng-controller="lab2Controller">
+
+<!-- Adding Navigation Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand" id="homePage"></div>
+        </div>
+        <ul class="nav navbar-nav">
+            <!-- To make tabs toggleable, added the data-toggle attribute -->
+            <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
+            <li><a href="#youtube" data-toggle="pill">YouTube Search</a></li>
+            <li><a href="#tictactoe" data-toggle="pill">TicTacToe Game</a></li>
+            <li><a href="#twitterFriends" data-toggle="pill">Twitter Friends List</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <!-- Adding Content to Tabs using tab-content class -->
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>Welcome to Lab2 of Web</h3>
+        </div>
+
+    <!-- YouTube Search -->
+    <div id="youtube" class="tab-pane fade">
+        <h3>YouTube Search</h3>
+
+        <!-- Asking for a Input -->
+        <input type="text" id="inputText" ng-model="youtubeText" placeholder="Enter Youtube search Key"/>
+        <button class="btn btn-success" ng-click="getYouTubeDetails()"> Show YouTube Search Details </button>
+
+        <!-- Iterating the Output from Javascript -->
+        <div ng-repeat="video in youTubeVideos">
+            <h3>{{video.snippet.title}}</h3>
+            <!-- Using Iframe showing the Video -->
+            <iframe type="text/html"
+                    width="640"
+                    height="385"
+                    src="http://www.youtube.com/embed/{{video.id.videoId}}"
+                    frameborder="0">
+            </iframe>
+        </div>
+
+        <!-- Error text -->
+        <p style="color: red" ng-bind="errorText"></p>
+    </div>
+
+        <!-- Tic Tac Toe Game -->
+        <div id="tictactoe" class="tab-pane fade" align="center">
+            <h3>Tic Tac Toe Game</h3>
+            <!-- Setting Next Player Move -->
+            Next Player: <strong style="color: red">{{nextMove}}</strong>
+            <div class="winner" ng-show="winner" style="color: red">Player {{winner}} has won!</div>
+            <table class="board">
+                <!-- Iterating each row in the Board -->
+                <tr ng-repeat="row in board" style="height:15px;">
+                    <!-- Iterating each cell in a row -->
+                    <!-- Dropping the Piece in the respective Index -->
+                    <td ng-repeat="cell in row" ng-style="cellStyle"
+                        ng-click="dropPiece($parent.$index, $index)">{{cell}}</td>
+                </tr>
+            </table>
+            <br/>
+            <button ng-click="reset()" class="btn btn-primary">Reset Board</button>
+            <br/><br/>
+            <!-- Trigger the modal on button click -->
+            <input type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary" value="Get Rules of Game" style="display: block; margin: 0 auto;">
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Rules</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p><li>2 users: 1 named “X” the other named “O”. The Application will make it clear the turn for each user.</li></p>
+                            <p><li>Honor the rule of the game:  two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.</li></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Twitter Friends List -->
+        <!-- YouTube Search -->
+        <div id="twitterFriends" class="tab-pane fade">
+            <h3>My Twitter Friends List</h3>
+
+            <!-- Asking for a Input -->
+            <input type="text" ng-model="twitterName" placeholder="Enter Twitter Screen Name"/>
+            <button ng-click="getTwitterFriends()" class="btn btn-primary">Get my Friends List</button>
+
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
