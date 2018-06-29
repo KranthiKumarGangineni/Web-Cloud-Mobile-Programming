@@ -16,6 +16,9 @@
     <!-- Bootstrap JS Import -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <!-- On Load Function is called, because we used Sign-In and Sign-Out in Different Pages -->
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
     <!-- ANgular JS Import -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"></script>
 
@@ -23,7 +26,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular-sanitize.js"></script>
 
     <script src="lab2script.js"></script>
+    <!-- load the d3.js library -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 </head>
+
+<style>
+    .node circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 3px;
+    }
+    .node text { font: 12px sans-serif; }
+    .link {
+        fill: none;
+        stroke: #ccc;
+        stroke-width: 2px;
+    }
+</style>
 
 <body ng-app="lab2App" ng-controller="lab2Controller">
 
@@ -125,7 +144,8 @@
             <!-- Asking for a Input -->
             <input type="text" ng-model="twitterName" placeholder="Enter Twitter Screen Name"/>
             <button ng-click="getTwitterFriends()" class="btn btn-primary">Get my Friends List</button>
-
+            <!-- Error text -->
+            <p style="color: red" ng-bind="errorText"></p>
         </div>
 
     </div>
