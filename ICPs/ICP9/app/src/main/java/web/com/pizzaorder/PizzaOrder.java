@@ -2,6 +2,7 @@ package web.com.pizzaorder;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -180,6 +181,14 @@ public class PizzaOrder extends AppCompatActivity{
     // Displays the Quantity
     private void display(int number) {
         quantityTextView.setText("" + number);
+    }
+
+    // On Click of Call
+    public void callStore(View view) {
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:2242799513"));
+        // Redirecting to Email Intent
+        startActivity(Intent.createChooser(callIntent, ""));
     }
 
 }
