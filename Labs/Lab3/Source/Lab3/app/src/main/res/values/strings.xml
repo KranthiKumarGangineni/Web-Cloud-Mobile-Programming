@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mobile-Lab1</string>
+    <!-- Twitter Api Key, Secret -->
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">wMGLip013YDrt6tfe3hanb1lN</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">APpA70bHpyB0ul4TzB3uYXLSMgS81Tx1xuncKhlRaYkV6eBY8G
+</string>
+    <!-- Watson Vision API Key -->
+    <string name="watson_api_key">6c1238ee9b590598c213c40a5fb69634ed7d87af</string>
+</resources>
