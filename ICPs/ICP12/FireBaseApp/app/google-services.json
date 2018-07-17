@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "946121394896",
+    "firebase_url": "https://icp12-cc1c1.firebaseio.com",
+    "project_id": "icp12-cc1c1",
+    "storage_bucket": "icp12-cc1c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946121394896:android:0e7008247a2b171f",
+        "android_client_info": {
+          "package_name": "edu.umkc.rashmi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946121394896-onmafgqpi512nos45kne4vmhcvipq73e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.umkc.rashmi",
+            "certificate_hash": "d535ff403c0fdc6a4d05859d0480b0282ffe77a1"
+          }
+        },
+        {
+          "client_id": "946121394896-rn697v30660ip1f70j0k4bcp2157hlee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6YZnrqJaXoyZpOxMzuq5Lgx5stA6FYBY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946121394896-rn697v30660ip1f70j0k4bcp2157hlee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
